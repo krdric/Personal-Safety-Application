@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context=".FakeCallActivity">
+
+    <View
+        android:id="@+id/top_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/header_gradient_bg"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/caller_image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/circle_background"
+        android:padding="4dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/caller_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Dad"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caller_image" />
+
+    <TextView
+        android:id="@+id/call_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Incoming call"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"
+        android:letterSpacing="0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caller_name" />
+
+    <TextView
+        android:id="@+id/tv_call_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/call_status" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#FF5252"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_accept"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/call"
+        app:tint="@android:color/white"
+        android:rotation="135" />
+
+    <TextView
+        android:id="@+id/tv_decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Decline"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_decline"
+        app:layout_constraintStart_toStartOf="@+id/btn_decline"
+        app:layout_constraintTop_toBottomOf="@+id/btn_decline" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#4CAF50"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_decline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_decline"
+        app:srcCompat="@drawable/call"
+        app:tint="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/ll_call_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_mute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_more_vert"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mute"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_keypad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_contacts"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Keypad"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_speaker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_phone"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Speaker"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_add_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_person"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Add call"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_info"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Video"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_contacts_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#333333"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_family"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Contacts"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Accept"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_accept"
+        app:layout_constraintStart_toStartOf="@+id/btn_accept"
+        app:layout_constraintTop_toBottomOf="@+id/btn_accept" />
+
+    <TextView
+        android:id="@+id/textView_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="Remind Me"
+        android:textColor="#BDBDBD"
+        app:drawableTopCompat="@drawable/ic_more_vert"
+        app:layout_constraintBottom_toTopOf="@+id/btn_decline"
+        app:layout_constraintEnd_toEndOf="@+id/btn_decline"
+        app:layout_constraintStart_toStartOf="@+id/btn_decline" />
+
+    <TextView
+        android:id="@+id/textView_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="Message"
+        android:textColor="#BDBDBD"
+        app:drawableTopCompat="@drawable/chat_info"
+        app:layout_constraintBottom_toTopOf="@+id/btn_accept"
+        app:layout_constraintEnd_toEndOf="@+id/btn_accept"
+        app:layout_constraintStart_toStartOf="@+id/btn_accept" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
