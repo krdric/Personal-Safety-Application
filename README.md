@@ -1,4 +1,4 @@
-# 🚨 SOS Emergency App
+# 🚨 Personal Safety Emergency App
          Develop a comprehensive, cross-platform mobile app to enhance personal security.
 
 
